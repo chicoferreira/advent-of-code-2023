@@ -17,9 +17,9 @@ fn parse_cube(input: &str) -> Cube {
     for color in input.split(", ") {
         if let Some((number, color)) = color.split_once(' ') {
             match color {
-                "red" => red += number.parse::<u32>().unwrap(),
-                "blue" => blue += number.parse::<u32>().unwrap(),
-                "green" => green += number.parse::<u32>().unwrap(),
+                "red" => red += number.parse::<u32>().unwrap_or(0),
+                "blue" => blue += number.parse::<u32>().unwrap_or(0),
+                "green" => green += number.parse::<u32>().unwrap_or(0),
                 _ => (),
             }
         }
