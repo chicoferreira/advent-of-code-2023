@@ -28,6 +28,7 @@ fn main() {
     println!("Part 2: {}", race.get_number_of_ways_record_beaten())
 }
 
+#[cfg(test)]
 mod tests {
     use crate::Race;
 
