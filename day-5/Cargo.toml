@@ -9,4 +9,3 @@ edition = "2021"
 debug = true
 
 [dependencies]
-benchme = "0.1.0"

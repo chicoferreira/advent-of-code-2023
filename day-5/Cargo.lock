@@ -3,14 +3,5 @@
 version = 3
 
 [[package]]
-name = "benchme"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5fba2f2b628d41a5901303856a650470c0bb7952b5373da038a6ba726c3f618b"
-
-[[package]]
 name = "day-5"
 version = "0.1.0"
-dependencies = [
- "benchme",
-]
