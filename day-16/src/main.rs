@@ -1,6 +1,8 @@
 use std::collections::HashSet;
 use std::time::Instant;
 
+use rayon::prelude::*;
+
 #[derive(Copy, Clone, PartialEq)]
 enum Tile {
     Empty,
@@ -146,10 +148,10 @@ fn part1(grid: &Grid) -> u64 {
 }
 
 fn part2(grid: &Grid) -> u64 {
-    (0..grid.width()).into_iter()
-        .flat_map(|x| (0..grid.height()).into_iter().map(move |y| (x, y)))
+    (0..grid.width()).into_par_iter()
+        .flat_map(|x| (0..grid.height()).into_par_iter().map(move |y| (x, y)))
         .filter(|&(x, y)| x == 0 || y == 0 || x == grid.width() - 1 || y == grid.height() - 1)
-        .flat_map(|position| DIRECTIONS.into_iter().map(move |d| (position, d.clone())))
+        .flat_map(|position| DIRECTIONS.into_par_iter().map(move |d| (position, d.clone())))
         .map(|(start_position, start_direction)| trace_light(grid, start_position, start_direction))
         .max()
         .expect("map shouldn't be empty")
