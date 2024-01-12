@@ -1,4 +1,4 @@
-use std::ops::{Range, RangeBounds};
+use std::ops::{Range};
 use std::time::Instant;
 
 struct Mapping {
@@ -188,9 +188,6 @@ fn part1(almanac: &Almanac) -> Option<u64> {
 
 #[cfg(test)]
 mod tests {
-    use super::overlap;
-    use std::ops::Range;
-
     #[test]
     fn test_get_range_mapping() {
         let map = super::Map {

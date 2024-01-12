@@ -45,10 +45,6 @@ impl Map {
         }
         Some(self.tiles[y][x])
     }
-
-    fn is_tile(&self, pos: (usize, usize), tile: Tile) -> bool {
-        self.get_tile(pos) == Some(tile)
-    }
 }
 
 // Only works for part 1

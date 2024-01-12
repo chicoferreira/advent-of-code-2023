@@ -148,6 +148,7 @@ fn part1(hailstones: &[Hailstone], start: i64, end: i64) -> usize {
 }
 
 fn part2(hailstones: &[Hailstone]) -> i64 {
+    // Matrix derivation: https://typst.app/project/rsfD1FatoOPpvl9CdYHn1C
     let mut matrix = vec![vec![Ratio::zero(); 7]; 6];
 
     let h1 = &hailstones[1];
